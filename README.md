@@ -1,5 +1,7 @@
 # chronic-ai
 
+## Full Agentic AI Ecosystem Walkthrough: https://youtu.be/xVE_88UbKOI?si=GSgs2EweiByaZ6Mo
+
 ---
 
 ## 📊 Data Sources
