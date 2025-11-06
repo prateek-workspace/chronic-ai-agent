@@ -1,0 +1,96 @@
+{
+  "brandName": "Chronic AI",
+  "header": {
+    "features": "Fonctionnalités",
+    "howItWorks": "Comment ça marche",
+    "about": "À propos",
+    "contact": "Contact",
+    "getDemo": "Obtenir une démo"
+  },
+  "hero": {
+    "title": "Surveillance Proactive de la Santé pour les Maladies Chroniques",
+    "subtitle": "Des millions de personnes ne suivent pas leur santé régulièrement, ce qui entraîne des risques invisibles. Chronic AI, votre agent de santé autonome, détecte les tendances dangereuses tôt et alerte votre médecin avant que les complications ne surviennent.",
+    "requestDemo": "Demander une démo",
+    "learnMore": "En savoir plus",
+    "card1Title": "Surveillance 24/7",
+    "card1Desc": "Suivi de santé continu alimenté par l'IA.",
+    "card2Title": "Réduction de 70%",
+    "card2Desc": "Des hospitalisations évitables.",
+    "card3Title": "Détection Précoce",
+    "card3Desc": "Des risques avant qu'ils ne deviennent critiques."
+  },
+  "features": {
+    "title": "Pourquoi Chronic AI Fonctionne",
+    "subtitle": "Du suivi continu aux alertes intelligentes, Chronic AI fournit un écosystème complet pour une gestion proactive de la santé.",
+    "f1Title": "Surveillance Continue",
+    "f1Desc": "Collecte les lectures (tension, glycémie, pas, sommeil) à partir d'appareils ou de journaux manuels pour tenir tout le monde informé de la santé en temps réel.",
+    "f2Title": "Détection et Raisonnement des Tendances",
+    "f2Desc": "Utilise l'IA pour trouver des schémas comme « tension en hausse depuis 5 jours » pour détecter les problèmes tôt, avant que les symptômes ne s'aggravent.",
+    "f3Title": "Actions de Santé Personnalisées",
+    "f3Desc": "Suggère des actions simples et personnalisées comme « Réduisez le sel aujourd'hui » ou « Marchez 20 minutes après le déjeuner » pour aider à maintenir les objectifs.",
+    "f4Title": "Adhésion aux Médicaments",
+    "f4Desc": "Suit quand un patient manque des doses ou enregistre des données incohérentes, détectant tôt les problèmes d'adhésion.",
+    "f5Title": "Alertes Intelligentes aux Médecins",
+    "f5Desc": "Si le risque persiste, compile automatiquement un rapport et l'envoie au médecin pour une intervention précoce.",
+    "f6Title": "Apprentissage Adaptatif",
+    "f6Desc": "Apprend quelles actions fonctionnent le mieux pour chaque patient, améliorant les futures recommandations au fil du temps."
+  },
+  "about": {
+    "title": "Combler l'Écart Entre les Visites",
+    "p1": "Les médecins ne voient souvent les patients que lors de visites périodiques, ce qui signifie que des tendances dangereuses comme une tension artérielle en hausse, des pics de glycémie ou des médicaments manqués peuvent passer inaperçues jusqu'à ce qu'il soit trop tard.",
+    "p2": "Chronic AI comble cet écart. Notre agent IA agit comme une extension vigilante de l'équipe clinique, fournissant une boucle de rétroaction continue entre le patient et son médecin. Cela garantit que les soins sont proactifs, et non réactifs.",
+    "empowerButton": "Renforcez Votre Pratique"
+  },
+  "howItWorks": {
+    "title": "Un Chemin Plus Simple vers une Meilleure Santé",
+    "subtitle": "En trois étapes simples, Chronic AI transforme les données de santé brutes en actions et informations vitales.",
+    "step1Title": "Suivre & Surveiller",
+    "step1Desc": "Les patients enregistrent leurs signes vitaux via des appareils connectés ou notre application simple. L'agent IA commence immédiatement une surveillance continue et non intrusive.",
+    "step2Title": "Analyser & Agir",
+    "step2Desc": "L'agent détecte les tendances cachées et fournit des commentaires personnalisés et exploitables au patient pour l'aider à rester sur la bonne voie avec ses objectifs de santé.",
+    "step3Title": "Alerter & Intervenir",
+    "step3Desc": "Si un risque persiste, une alerte intelligente avec un résumé complet des données est envoyée au médecin, lui permettant d'intervenir tôt et de prévenir les complications."
+  },
+  "patientJourney": {
+    "title": "Suivez le Parcours d'un Patient",
+    "subtitle": "Voyez comment Chronic AI transforme les données en actions décisives avec un exemple concret.",
+    "step1Title": "1. Surveillance Quotidienne",
+    "step1Desc": "Raj, 50 ans, atteint de diabète de type 2, synchronise automatiquement ses lectures de tension et de glycémie.",
+    "step2Title": "2. L'IA Détecte un Risque",
+    "step2Desc": "L'agent remarque que la tension de Raj augmente depuis 4 jours, un signe de problème potentiel.",
+    "step3Title": "3. Action Personnalisée",
+    "step3Desc": "Chronic AI envoie un message à Raj : 'Votre tension augmente. Essayez de réduire le sel aujourd'hui et marchez 15 minutes après le déjeuner.'",
+    "step4Title": "4. Alerte Intelligente au Médecin",
+    "step4Desc": "Lorsque sa tension reste élevée, l'agent alerte automatiquement le médecin de Raj avec un rapport concis.",
+    "step5Title": "5. Intervention Précoce",
+    "step5Desc": "Le médecin examine les données, ajuste les médicaments à distance, et la tension de Raj revient à la normale. Une complication est évitée."
+  },
+  "cta": {
+    "title": "Prenez le Contrôle de la Santé, de Manière Proactive.",
+    "subtitle": "Prêt à voir comment la surveillance autonome peut transformer les soins aux patients ? Contactez-nous pour une démo personnalisée.",
+    "button": "Demander un Accès Anticipé"
+  },
+  "contact": {
+    "title": "Obtenir une Démo Personnalisée",
+    "subtitle": "Remplissez le formulaire, et notre équipe vous contactera pour planifier une démo adaptée à vos besoins, que vous soyez un patient, un médecin ou un administrateur de clinique.",
+    "formName": "Nom Complet",
+    "formEmail": "Adresse E-mail",
+    "formRole": "Je suis un...",
+    "rolePatient": "Patient ou Soignant",
+    "roleDoctor": "Médecin ou Clinicien",
+    "roleAdmin": "Administrateur d'Hôpital",
+    "roleOther": "Autre",
+    "formMessage": "Message (Optionnel)",
+    "formSubmit": "Envoyer la Demande"
+  },
+  "footer": {
+    "tagline": "Surveillance proactive de la santé pour combler l'écart entre les visites cliniques.",
+    "product": "Produit",
+    "company": "Entreprise",
+    "contact": "Contact",
+    "careers": "Carrières",
+    "press": "Presse",
+    "aboutUs": "À propos de nous",
+    "copyright": "© {{year}} Chronic AI Health. Tous Droits Réservés."
+  }
+}
