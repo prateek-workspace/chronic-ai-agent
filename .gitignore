@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -32,3 +33,6 @@ dist-ssr
 .env.*.local
 .venv
 venv/
+=======
+node_modules/
+>>>>>>> 02e7f0dd424cc6fd46f8aee335d7e70e9eb4f05e

@@ -1,0 +1,97 @@
+{
+  "brandName": "Chronic AI",
+  "header": {
+    "features": "Features",
+    "howItWorks": "How It Works",
+    "about": "About",
+    "contact": "Contact",
+    "getStarted": "Get Started",
+    "signUp": "Sign Up"
+  },
+  "hero": {
+    "title": "Proactive Health Monitoring for Chronic Conditions",
+    "subtitle": "Millions fail to track their health regularly, leading to unseen risks. Chronic AI, your autonomous health agent, detects dangerous trends early and alerts your doctor before complications arise.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "card1Title": "24/7 Monitoring",
+    "card1Desc": "AI-powered continuous health tracking.",
+    "card2Title": "70% Reduction",
+    "card2Desc": "In preventable hospitalizations.",
+    "card3Title": "Early Detection",
+    "card3Desc": "Of risks before they become critical."
+  },
+  "features": {
+    "title": "Why Chronic AI Works",
+    "subtitle": "From continuous tracking to intelligent alerts, Chronic AI provides a complete ecosystem for proactive health management.",
+    "f1Title": "Continuous Monitoring",
+    "f1Desc": "Collects readings (BP, sugar, steps, sleep) from devices or manual logs to keep everyone aware of real-time health.",
+    "f2Title": "Trend Detection & Reasoning",
+    "f2Desc": "Uses AI to find patterns like “BP rising for 5 days” to detect issues early, before symptoms worsen.",
+    "f3Title": "Personalized Health Actions",
+    "f3Desc": "Suggests simple, personalized actions like “Reduce salt today” or “Walk 20 mins after lunch” to help maintain targets.",
+    "f4Title": "Medication Adherence",
+    "f4Desc": "Tracks when a patient misses doses or logs inconsistent data, detecting adherence problems early.",
+    "f5Title": "Smart Alerts to Doctors",
+    "f5Desc": "If risk continues, automatically compiles a report and sends it to the doctor for early intervention.",
+    "f6Title": "Adaptive Learning",
+    "f6Desc": "Learns which actions work best for each patient, improving future recommendations over time."
+  },
+  "about": {
+    "title": "Closing the Gap Between Visits",
+    "p1": "Doctors often see patients only during periodic visits, meaning dangerous trends like rising blood pressure, sugar spikes, or missed medications can go unnoticed until it's too late.",
+    "p2": "Chronic AI bridges this gap. Our AI agent acts as a vigilant extension of the clinical team, providing a continuous feedback loop between the patient and their doctor. This ensures that care is proactive, not reactive.",
+    "getStartedButton": "Get Started"
+  },
+  "howItWorks": {
+    "title": "A Simpler Path to Better Health",
+    "subtitle": "In three simple steps, Chronic AI transforms raw health data into life-saving actions and insights.",
+    "step1Title": "Track & Monitor",
+    "step1Desc": "Patients log vitals through connected devices or our simple app. The AI agent begins continuous, non-intrusive monitoring immediately.",
+    "step2Title": "Analyze & Act",
+    "step2Desc": "The agent detects hidden trends and provides personalized, actionable feedback to the patient to help them stay on track with their health goals.",
+    "step3Title": "Alert & Intervene",
+    "step3Desc": "If a risk persists, a smart alert with a full data summary is sent to the doctor, enabling them to intervene early and prevent complications."
+  },
+  "patientJourney": {
+    "title": "Follow a Patient's Journey",
+    "subtitle": "See how Chronic AI turns data into decisive action with a real-world example.",
+    "step1Title": "1. Daily Monitoring",
+    "step1Desc": "Raj, a 50-year-old with Type-2 Diabetes, syncs his BP and glucose readings automatically.",
+    "step2Title": "2. AI Detects a Risk",
+    "step2Desc": "The agent notices Raj's BP is trending up over 4 days, a sign of potential trouble.",
+    "step3Title": "3. Personalized Action",
+    "step3Desc": "Chronic AI messages Raj: 'Your BP is rising. Try reducing salt today and walk 15 minutes after lunch.'",
+    "step4Title": "4. Smart Alert to Doctor",
+    "step4Desc": "When his BP remains high, the agent automatically alerts Raj's doctor with a concise report.",
+    "step5Title": "5. Early Intervention",
+    "step5Desc": "The doctor reviews the data, adjusts medication remotely, and Raj’s BP returns to normal. A complication is avoided."
+  },
+  "cta": {
+    "title": "Take Control of Health, Proactively.",
+    "subtitle": "Ready to see how autonomous monitoring can transform patient care? Get in touch for a personalized demo.",
+    "button": "Get Started"
+  },
+  "contact": {
+    "title": "Request a Demo",
+    "subtitle": "Fill out the form, and our team will contact you to schedule a demo tailored to your needs—whether you're a patient, a doctor, or a clinic administrator.",
+    "formName": "Full Name",
+    "formEmail": "Email Address",
+    "formRole": "I am a...",
+    "rolePatient": "Patient or Caregiver",
+    "roleDoctor": "Doctor or Clinician",
+    "roleAdmin": "Hospital Administrator",
+    "roleOther": "Other",
+    "formMessage": "Message (Optional)",
+    "formSubmit": "Request Demo"
+  },
+  "footer": {
+    "tagline": "Proactive health monitoring to bridge the gap between clinical visits.",
+    "product": "Product",
+    "company": "Company",
+    "contact": "Contact",
+    "careers": "Careers",
+    "press": "Press",
+    "aboutUs": "About Us",
+    "copyright": "© {{year}} Chronic AI Health. All Rights Reserved."
+  }
+}
