@@ -1,10 +1,17 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { UploadCloud } from 'lucide-react';
+import { UploadCloud, FileJson } from 'lucide-react';
 import { supabase } from '../../lib/supabaseClient';
+import JsonImportModal from './JsonImportModal';
+import { HealthData } from '../../lib/dataProcessor';
 
-const DataSyncCard: React.FC = () => {
+interface DataSyncCardProps {
+    onDataImported: (data: HealthData) => void;
+}
+
+const DataSyncCard: React.FC<DataSyncCardProps> = ({ onDataImported }) => {
     const fileInputRef = useRef<HTMLInputElement>(null);
+    const [isJsonModalOpen, setIsJsonModalOpen] = useState(false);
 
     const handleUploadClick = () => {
         fileInputRef.current?.click();
@@ -48,36 +55,46 @@ const DataSyncCard: React.FC = () => {
   ];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.6, duration: 0.5 }}
-      className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md"
-    >
-      <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">Sync Your Health Data</h3>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        {syncOptions.map(opt => (
-          <button key={opt.name} className="w-full flex items-center justify-center gap-2 p-3 bg-gray-100 dark:bg-gray-700 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
-            <span className="text-xl">{opt.icon}</span>
-            <span className="font-semibold text-gray-700 dark:text-gray-200">{opt.name}</span>
-          </button>
-        ))}
-        <button 
-            onClick={handleUploadClick}
-            className="w-full flex items-center justify-center gap-2 p-3 bg-blue-100 dark:bg-blue-500/20 text-blue-600 dark:text-blue-300 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-500/30 transition-colors"
+    <>
+        <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.5 }}
+        className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md"
         >
-          <UploadCloud className="w-5 h-5" />
-          <span className="font-semibold">Upload Report</span>
-        </button>
-        <input
-            type="file"
-            ref={fileInputRef}
-            onChange={handleFileChange}
-            className="hidden"
-            accept=".pdf,.jpg,.jpeg,.png"
-        />
-      </div>
-    </motion.div>
+        <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">Sync Your Health Data</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {syncOptions.map(opt => (
+            <button key={opt.name} className="w-full flex items-center justify-center gap-2 p-3 bg-gray-100 dark:bg-gray-700 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+                <span className="text-xl">{opt.icon}</span>
+                <span className="font-semibold text-gray-700 dark:text-gray-200">{opt.name}</span>
+            </button>
+            ))}
+            <button 
+                onClick={handleUploadClick}
+                className="w-full flex items-center justify-center gap-2 p-3 bg-blue-100 dark:bg-blue-500/20 text-blue-600 dark:text-blue-300 rounded-lg hover:bg-blue-200 dark:hover:bg-blue-500/30 transition-colors"
+            >
+            <UploadCloud className="w-5 h-5" />
+            <span className="font-semibold">Upload Report</span>
+            </button>
+            <button 
+                onClick={() => setIsJsonModalOpen(true)}
+                className="w-full flex items-center justify-center gap-2 p-3 bg-purple-100 dark:bg-purple-500/20 text-purple-600 dark:text-purple-300 rounded-lg hover:bg-purple-200 dark:hover:bg-purple-500/30 transition-colors"
+            >
+            <FileJson className="w-5 h-5" />
+            <span className="font-semibold">Import from JSON</span>
+            </button>
+            <input
+                type="file"
+                ref={fileInputRef}
+                onChange={handleFileChange}
+                className="hidden"
+                accept=".pdf,.jpg,.jpeg,.png"
+            />
+        </div>
+        </motion.div>
+        <JsonImportModal isOpen={isJsonModalOpen} onClose={() => setIsJsonModalOpen(false)} onImportSuccess={onDataImported} />
+    </>
   );
 };
 

@@ -38,6 +38,41 @@ export type Database = {
           },
         ]
       }
+      health_reports: {
+        Row: {
+          id: number
+          patient_id: string
+          created_at: string
+          raw_data: Json
+          report_data: Json
+          report_name: string
+        }
+        Insert: {
+          id?: number
+          patient_id: string
+          created_at?: string
+          raw_data: Json
+          report_data: Json
+          report_name: string
+        }
+        Update: {
+          id?: number
+          patient_id?: string
+          created_at?: string
+          raw_data?: Json
+          report_data?: Json
+          report_name?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "health_reports_patient_id_fkey"
+            columns: ["patient_id"]
+            isOneToOne: false
+            referencedRelation: "users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       patients: {
         Row: {
           age: number | null

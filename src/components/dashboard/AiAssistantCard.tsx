@@ -2,25 +2,22 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Lightbulb, Sparkles, AlertTriangle } from 'lucide-react';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import { Vital } from '../../lib/mockData';
+import { supabase } from '../../lib/supabaseClient';
+import { useAuth } from '../../contexts/AuthContext';
 
-interface AiAssistantCardProps {
-  patientVitals: Vital[];
-  patientProfile: {
-    age?: number | string;
-    sex?: string;
-    medical_history?: string;
-    medications?: string;
-  };
-}
-
-const AiAssistantCard: React.FC<AiAssistantCardProps> = ({ patientVitals, patientProfile }) => {
+const AiAssistantCard: React.FC = () => {
+  const { user } = useAuth();
   const [isAiEnabled, setIsAiEnabled] = useState(true);
   const [suggestion, setSuggestion] = useState<{ title: string; body: string } | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const handleGenerateSuggestion = async () => {
+    if (!user) {
+      setError("You must be logged in to generate suggestions.");
+      return;
+    }
+
     const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
     if (!apiKey) {
       setError("Gemini API key is not configured. Please add VITE_GEMINI_API_KEY to your .env file.");
@@ -32,27 +29,51 @@ const AiAssistantCard: React.FC<AiAssistantCardProps> = ({ patientVitals, patien
     setSuggestion(null);
 
     try {
+      // 1. Fetch patient profile
+      const { data: profileData, error: profileError } = await supabase
+        .from('patients')
+        .select('age, sex, medical_history, medications')
+        .eq('id', user.id)
+        .single();
+      
+      if (profileError && profileError.code !== 'PGRST116') throw profileError;
+
+      // 2. Fetch last 3 health reports for trend analysis
+      const { data: reportsData, error: reportsError } = await supabase
+        .from('health_reports')
+        .select('created_at, report_data, raw_data')
+        .eq('patient_id', user.id)
+        .order('created_at', { ascending: false })
+        .limit(3);
+
+      if (reportsError) throw reportsError;
+
+      if (!reportsData || reportsData.length === 0) {
+        throw new Error("No health reports found. Please import your data first to get an AI suggestion.");
+      }
+
+      // 3. Construct the prompt
       const genAI = new GoogleGenerativeAI(apiKey);
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash-latest" });
+      const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
       const prompt = `
-        You are an empathetic AI health assistant for a patient with chronic conditions. Based on the following data, provide a concise, personalized, and actionable lifestyle suggestion.
+        You are an empathetic AI health assistant. Based on the patient's profile and their recent health data, provide a concise, personalized, and actionable lifestyle suggestion.
 
         Patient Profile:
-        - Age: ${patientProfile.age || 'Not provided'}
-        - Sex: ${patientProfile.sex || 'Not provided'}
-        - Medical History: ${patientProfile.medical_history || 'Not provided'}
-        - Current Medications: ${patientProfile.medications || 'Not provided'}
+        - Age: ${profileData?.age || 'Not provided'}
+        - Sex: ${profileData?.sex || 'Not provided'}
+        - Medical History: ${profileData?.medical_history || 'Not provided'}
+        - Current Medications: ${profileData?.medications || 'Not provided'}
 
-        Latest Vitals Data:
-        ${patientVitals.map(v => `- ${v.name}: ${v.value} ${v.unit} (Trend is ${v.trend})`).join('\n')}
+        Recent Health Data (most recent first):
+        ${reportsData.map(report => `- Data from ${new Date(report.created_at).toLocaleDateString()}: ${JSON.stringify(report.raw_data)}`).join('\n')}
 
         Your task:
-        1. Analyze all the vitals to identify the single most important health concern right now (e.g., high blood sugar, low activity, rising blood pressure).
+        1. Analyze the trend across the recent data to identify the single most important health concern right now (e.g., consistently high blood sugar, decreasing activity, rising blood pressure).
         2. Provide a suggestion that is safe, easy to understand, and directly addresses that primary concern.
         3. Format the response as follows, and only as follows:
            - Line 1: A short, encouraging title (e.g., "A small step for your heart" or "A quick tip for your sugar levels").
-           - After that, the detailed suggestion (e.g., "Your blood pressure is a bit high. Try swapping your usual snack for a piece of fruit today and go for a 15-minute walk after dinner.").
+           - After that, the detailed suggestion (e.g., "Your blood pressure has been trending up. Try swapping your usual snack for a piece of fruit today and go for a 15-minute walk after dinner.").
         4. Do NOT add any extra text, disclaimers, or conversational filler. The response must only contain the title and the suggestion.
       `;
 
@@ -66,7 +87,7 @@ const AiAssistantCard: React.FC<AiAssistantCardProps> = ({ patientVitals, patien
       setSuggestion({ title: title || "AI Health Suggestion", body });
 
     } catch (err: any) {
-      console.error(err);
+      console.error("AI Suggestion Error:", err);
       setError(err.message || 'Failed to generate suggestion. Please check your API key and try again.');
     } finally {
       setIsLoading(false);
@@ -84,7 +105,7 @@ const AiAssistantCard: React.FC<AiAssistantCardProps> = ({ patientVitals, patien
           >
             <Sparkles className="w-12 h-12 text-brand-primary-lighter" />
           </motion.div>
-          <p className="mt-4 font-semibold text-brand-primary-lighter">Generating AI insights...</p>
+          <p className="mt-4 font-semibold text-brand-primary-lighter">Analyzing your health data...</p>
         </div>
       );
     }
@@ -132,7 +153,9 @@ const AiAssistantCard: React.FC<AiAssistantCardProps> = ({ patientVitals, patien
       <div className="text-center py-8">
         <Lightbulb className="w-12 h-12 mx-auto text-brand-primary-lighter" />
         <h3 className="text-2xl font-bold mt-4">Get Personalized Advice</h3>
-        <p className="text-brand-primary-lighter mt-2 mb-6">Click the button to let our AI analyze your latest data and provide a custom suggestion.</p>
+        <p className="text-brand-primary-lighter mt-2 mb-6">
+            Click the button to let our AI analyze your latest health data from the database.
+        </p>
         <button
           onClick={handleGenerateSuggestion}
           className="bg-white text-brand-primary font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-opacity-90 transform hover:-translate-y-1 transition-all duration-300"

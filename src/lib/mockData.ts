@@ -27,15 +27,6 @@ export interface SingleValueChartData {
   values: number[];
 }
 
-export interface DetailedReport {
-  id: number;
-  name: string;
-  date: string;
-  type: 'Weekly Summary' | 'BP Report' | 'Glucose Report' | 'Activity Log';
-  summary: string;
-  vitals: { name: string; value: string; status: 'Normal' | 'High' | 'Low' }[];
-  recommendations: string[];
-}
 
 // --- Data Generators ---
 
@@ -140,62 +131,3 @@ export const generateHeartRateChartData = (): SingleValueChartData => {
     const values = Array.from({ length: 7 }, () => faker.number.int({ min: 65, max: 90 }));
     return { dates, values };
 }
-
-
-export const generateDetailedReports = (): DetailedReport[] => {
-  return [
-    {
-      id: 1,
-      name: 'Weekly Health Summary',
-      date: 'Oct 25, 2025',
-      type: 'Weekly Summary',
-      summary: 'Overall, this week showed a slight upward trend in blood pressure and blood sugar. Activity levels were inconsistent. Increased focus on diet and consistent light exercise is recommended.',
-      vitals: [
-        { name: 'Avg. Blood Pressure', value: '142/91 mmHg', status: 'High' },
-        { name: 'Avg. Blood Sugar', value: '155 mg/dL', status: 'High' },
-        { name: 'Avg. Heart Rate', value: '78 bpm', status: 'Normal' },
-        { name: 'Avg. Daily Steps', value: '3,200', status: 'Low' },
-      ],
-      recommendations: [
-        'Aim for at least 30 minutes of walking, 5 days a week.',
-        'Reduce sodium intake by avoiding processed foods.',
-        'Monitor blood sugar levels before and after meals.',
-        'Ensure consistent medication adherence.'
-      ]
-    },
-    {
-      id: 2,
-      name: 'Blood Pressure Trend Report',
-      date: 'Oct 24, 2025',
-      type: 'BP Report',
-      summary: 'Systolic blood pressure has been consistently above the target of 130 mmHg for the past 5 days. Diastolic pressure remains borderline high. This pattern suggests a need for intervention.',
-      vitals: [
-        { name: 'Highest BP', value: '148/95 mmHg', status: 'High' },
-        { name: 'Lowest BP', value: '135/88 mmHg', status: 'High' },
-        { name: 'Weekly Average', value: '142/91 mmHg', status: 'High' },
-      ],
-      recommendations: [
-        'Consult your doctor about a potential medication adjustment.',
-        'Practice deep-breathing exercises for 10 minutes daily.',
-        'Strictly limit salt intake to less than 2,300 mg per day.'
-      ]
-    },
-    {
-        id: 3,
-        name: 'Monthly Activity Log',
-        date: 'Oct 1, 2025',
-        type: 'Activity Log',
-        summary: 'Activity levels were highest on weekends but dropped significantly during weekdays. The average daily step count of 4,100 is below the recommended 7,000 for managing your condition.',
-        vitals: [
-            { name: 'Avg. Daily Steps', value: '4,100', status: 'Low' },
-            { name: 'Most Active Day', value: '8,900 steps (Sat)', status: 'Normal' },
-            { name: 'Least Active Day', value: '1,200 steps (Wed)', status: 'Low' },
-        ],
-        recommendations: [
-            'Incorporate short 10-minute walks during work breaks.',
-            'Find an enjoyable activity like cycling or swimming.',
-            'Set a daily step goal and track your progress.'
-        ]
-    },
-  ];
-};

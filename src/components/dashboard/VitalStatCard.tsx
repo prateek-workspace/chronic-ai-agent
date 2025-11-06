@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowUp, ArrowDown, Minus } from 'lucide-react';
-import { Vital } from '../../lib/mockData';
+import { VitalCardData } from '../../lib/dataProcessor';
 
 interface VitalStatCardProps {
-  vital: Vital;
+  vital: VitalCardData;
   index: number;
 }
 
@@ -23,7 +23,7 @@ const VitalStatCard: React.FC<VitalStatCardProps> = ({ vital, index }) => {
       className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
     >
       <div className="flex justify-between items-start">
-        <h3 className="font-semibold text-gray-600 dark:text-gray-300">{vital.name}</h3>
+        <h3 className="font-semibold text-gray-600 dark:text-gray-300 capitalize">{vital.name.replace('_', ' ')}</h3>
         <div className={`p-2 rounded-full ${
           vital.trend === 'up' ? 'bg-red-100 dark:bg-red-500/20' : 
           vital.trend === 'down' ? 'bg-green-100 dark:bg-green-500/20' : 
@@ -36,7 +36,7 @@ const VitalStatCard: React.FC<VitalStatCardProps> = ({ vital, index }) => {
         <span className="text-4xl font-bold text-gray-800 dark:text-white">{vital.value}</span>
         <span className="ml-2 text-gray-500 dark:text-gray-400">{vital.unit}</span>
       </div>
-      <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">{vital.change}</p>
+      <p className="mt-2 text-sm text-gray-500 dark:text-gray-400 h-4">{vital.change}</p>
     </motion.div>
   );
 };

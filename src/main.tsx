@@ -17,11 +17,11 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Suspense fallback={<LoadingSpinner />}>
       <BrowserRouter>
-        <NotificationProvider>
-          <AuthProvider>
+        <AuthProvider>
+          <NotificationProvider>
             <App />
-          </AuthProvider>
-        </NotificationProvider>
+          </NotificationProvider>
+        </AuthProvider>
       </BrowserRouter>
     </Suspense>
   </StrictMode>,

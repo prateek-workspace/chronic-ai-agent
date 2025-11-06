@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Activity as ActivityIcon, Footprints, Pill } from 'lucide-react';
-import { Activity } from '../../lib/mockData';
+import { ActivityLogItem } from '../../lib/dataProcessor';
 
 interface RecentActivityProps {
-  activities: Activity[];
+  activities: ActivityLogItem[];
 }
 
 const iconMap = {
@@ -22,19 +22,26 @@ const RecentActivity: React.FC<RecentActivityProps> = ({ activities }) => {
       className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md"
     >
       <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">Recent Activity</h3>
-      <ul className="space-y-4">
-        {activities.map((activity) => (
-          <li key={activity.id} className="flex items-center">
-            <div className="p-3 bg-gray-100 dark:bg-gray-700 rounded-full">
-              {iconMap[activity.icon]}
-            </div>
-            <div className="ml-4 flex-1">
-              <p className="font-semibold text-gray-700 dark:text-gray-200">{activity.description}</p>
-              <p className="text-sm text-gray-500 dark:text-gray-400">{activity.time}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
+      {activities.length > 0 ? (
+        <ul className="space-y-4">
+            {activities.map((activity) => (
+            <li key={activity.id} className="flex items-center">
+                <div className="p-3 bg-gray-100 dark:bg-gray-700 rounded-full">
+                {iconMap[activity.icon]}
+                </div>
+                <div className="ml-4 flex-1">
+                <p className="font-semibold text-gray-700 dark:text-gray-200">{activity.description}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">{activity.time}</p>
+                </div>
+            </li>
+            ))}
+        </ul>
+      ) : (
+        <div className="text-center py-8 text-gray-500">
+            <p>No recent activity to show.</p>
+            <p className="text-sm">Import your data to see your activity log.</p>
+        </div>
+      )}
     </motion.div>
   );
 };

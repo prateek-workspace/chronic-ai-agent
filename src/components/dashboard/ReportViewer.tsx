@@ -1,7 +1,7 @@
 import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { X, FileText, BarChart2, CheckCircle, AlertTriangle, TrendingDown, TrendingUp } from 'lucide-react';
-import { DetailedReport } from '../../lib/mockData';
+import { X, FileText, BarChart2, CheckCircle, TrendingDown, TrendingUp } from 'lucide-react';
+import { DetailedReport } from '../../types/reports';
 
 interface ReportViewerProps {
   isOpen: boolean;
