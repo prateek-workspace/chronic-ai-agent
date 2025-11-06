@@ -32,9 +32,8 @@
 
 ## 🧑‍💻 Contributors
 
-**Project Lead:** [Your Name]  
-**Team Members:** [Add if applicable]  
-**Institution :HBTU Kanpur
+Project Lead: Prateek Srivastava
+Team Members: Lakshya Baranwal & Prakhar Singh Institution :HBTU Kanpur
 
 ---
 
