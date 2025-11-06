@@ -1,0 +1,26 @@
+Patient: Rohan (45M)
+Patient ID: patient_01
+Doctor ID: dr_sharma_001
+
+Analysis: Repeated High Blood Pressure and Blood Sugar
+
+Patient Rohan (45M) with a history of Diabetes Type 2 and Hypertension is exhibiting consistently elevated blood pressure and blood sugar levels over the past four days. His targets are blood pressure < 130/80 mmHg and blood sugar < 140 mg/dL.
+
+Trends:
+
+*   Blood Pressure: Consistently above target. Recent readings: 142/90, 138/86, 145/88, 143/91 mmHg.
+*   Blood Sugar: Consistently above target. Recent readings: 152, 148, 160, 165 mg/dL.
+*   Medication Adherence: Missed Metformin dose on two of the last four days, including today.
+*   Activity Levels: Consistently below the target of 5000 steps. Today's step count: 2800.
+*   Sleep: Declining sleep duration, with less than 6 hours reported on the last two nights.
+
+Today's Status:
+
+*   Blood Pressure: 143/91 mmHg
+*   Blood Sugar: 165 mg/dL
+*   Medication: Metformin dose missed
+*   Steps: 2800
+
+Conclusion:
+
+Rohan's elevated blood pressure and blood sugar levels, combined with medication non-adherence, insufficient physical activity, and potentially inadequate sleep, require prompt attention. The upward trend in both blood pressure and blood sugar warrants immediate review and potential intervention. Consider discussing medication adherence, diet, and exercise strategies with the patient.
