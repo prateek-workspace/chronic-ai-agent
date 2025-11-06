@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabaseClient';
+import { User, Stethoscope } from 'lucide-react';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [role, setRole] = useState<'patient' | 'doctor'>('patient');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
@@ -14,14 +16,60 @@ const Login: React.FC = () => {
     setLoading(true);
     setError(null);
     try {
-      const { error } = await supabase.auth.signInWithPassword({ email, password });
-      if (error) throw error;
-      navigate('/');
+      const { data, error: signInError } = await supabase.auth.signInWithPassword({ email, password });
+      if (signInError) throw signInError;
+
+      const actualRole = data.user?.user_metadata.role;
+
+      if (actualRole !== role) {
+        throw new Error(`Login failed. You are trying to log in as a ${role}, but you are registered as a ${actualRole}.`);
+      }
+      
+      if (actualRole === 'doctor') {
+        navigate('/doctor');
+      } else {
+        navigate('/dashboard');
+      }
+
     } catch (error: any) {
       setError(error.error_description || error.message);
     } finally {
       setLoading(false);
     }
+  };
+
+  const RoleButton = ({
+    selectedRole,
+    targetRole,
+    onClick,
+    icon,
+    label
+  }: {
+    selectedRole: 'patient' | 'doctor';
+    targetRole: 'patient' | 'doctor';
+    onClick: () => void;
+    icon: React.ReactNode;
+    label: string;
+  }) => {
+    const isActive = selectedRole === targetRole;
+    return (
+      <button
+        type="button"
+        onClick={onClick}
+        className={`flex-1 flex flex-col items-center justify-center p-4 rounded-lg border-2 transition-all duration-200 ${
+          isActive
+            ? 'bg-brand-primary/10 border-brand-primary shadow-inner'
+            : 'bg-gray-50 dark:bg-gray-700/50 border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500'
+        }`}
+      >
+        <div className={`transition-colors ${isActive ? 'text-brand-primary' : 'text-gray-500 dark:text-gray-400'}`}>
+          {icon}
+        </div>
+        <span className={`mt-2 font-semibold text-sm transition-colors ${isActive ? 'text-brand-primary' : 'text-gray-700 dark:text-gray-300'}`}>
+          {label}
+        </span>
+      </button>
+    );
   };
 
   return (
@@ -33,7 +81,28 @@ const Login: React.FC = () => {
         </div>
         <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-2xl">
           <form onSubmit={handleSubmit}>
-            {error && <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">{error}</div>}
+            {error && <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-6" role="alert">{error}</div>}
+            
+            <div className="mb-6">
+              <label className="block text-brand-text-dark dark:text-gray-200 font-sans font-semibold mb-3 text-center">I am logging in as a...</label>
+              <div className="flex gap-4">
+                <RoleButton 
+                  selectedRole={role}
+                  targetRole="patient"
+                  onClick={() => setRole('patient')}
+                  icon={<User size={24} />}
+                  label="Patient"
+                />
+                <RoleButton 
+                  selectedRole={role}
+                  targetRole="doctor"
+                  onClick={() => setRole('doctor')}
+                  icon={<Stethoscope size={24} />}
+                  label="Doctor"
+                />
+              </div>
+            </div>
+
             <div className="mb-6">
               <label htmlFor="email" className="block text-brand-text-dark dark:text-gray-200 font-sans font-semibold mb-2">Email Address</label>
               <input 
