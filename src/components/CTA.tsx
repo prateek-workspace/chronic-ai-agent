@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const CTA: React.FC = () => {
   const { t } = useTranslation();
@@ -10,9 +11,9 @@ const CTA: React.FC = () => {
         <p className="text-lg text-brand-text-light dark:text-gray-300 font-serif mb-8 max-w-2xl mx-auto">
           {t('cta.subtitle')}
         </p>
-        <a href="#contact" className="bg-brand-primary text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-opacity-90 transform hover:-translate-y-1 transition-all duration-300 text-xl">
+        <Link to="/signup" className="bg-brand-primary text-white font-bold py-4 px-10 rounded-lg shadow-lg hover:bg-opacity-90 transform hover:-translate-y-1 transition-all duration-300 text-xl">
           {t('cta.button')}
-        </a>
+        </Link>
       </div>
     </section>
   );

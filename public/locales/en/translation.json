@@ -5,12 +5,13 @@
     "howItWorks": "How It Works",
     "about": "About",
     "contact": "Contact",
-    "getDemo": "Get a Demo"
+    "getStarted": "Get Started",
+    "signUp": "Sign Up"
   },
   "hero": {
     "title": "Proactive Health Monitoring for Chronic Conditions",
     "subtitle": "Millions fail to track their health regularly, leading to unseen risks. Chronic AI, your autonomous health agent, detects dangerous trends early and alerts your doctor before complications arise.",
-    "requestDemo": "Request a Demo",
+    "getStarted": "Get Started",
     "learnMore": "Learn More",
     "card1Title": "24/7 Monitoring",
     "card1Desc": "AI-powered continuous health tracking.",
@@ -39,7 +40,7 @@
     "title": "Closing the Gap Between Visits",
     "p1": "Doctors often see patients only during periodic visits, meaning dangerous trends like rising blood pressure, sugar spikes, or missed medications can go unnoticed until it's too late.",
     "p2": "Chronic AI bridges this gap. Our AI agent acts as a vigilant extension of the clinical team, providing a continuous feedback loop between the patient and their doctor. This ensures that care is proactive, not reactive.",
-    "empowerButton": "Empower Your Practice"
+    "getStartedButton": "Get Started"
   },
   "howItWorks": {
     "title": "A Simpler Path to Better Health",
@@ -68,10 +69,10 @@
   "cta": {
     "title": "Take Control of Health, Proactively.",
     "subtitle": "Ready to see how autonomous monitoring can transform patient care? Get in touch for a personalized demo.",
-    "button": "Request Early Access"
+    "button": "Get Started"
   },
   "contact": {
-    "title": "Get a Personalized Demo",
+    "title": "Request a Demo",
     "subtitle": "Fill out the form, and our team will contact you to schedule a demo tailored to your needs—whether you're a patient, a doctor, or a clinic administrator.",
     "formName": "Full Name",
     "formEmail": "Email Address",
@@ -81,7 +82,7 @@
     "roleAdmin": "Hospital Administrator",
     "roleOther": "Other",
     "formMessage": "Message (Optional)",
-    "formSubmit": "Submit Request"
+    "formSubmit": "Request Demo"
   },
   "footer": {
     "tagline": "Proactive health monitoring to bridge the gap between clinical visits.",

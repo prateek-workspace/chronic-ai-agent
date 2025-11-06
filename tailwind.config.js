@@ -20,7 +20,7 @@ export default {
       },
       fontFamily: {
         sans: ['Montserrat', 'sans-serif'],
-        serif: ['Baskervville', 'serif'],
+        serif: ['Poppins', 'sans-serif'],
       }
     },
   },

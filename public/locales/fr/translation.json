@@ -5,12 +5,13 @@
     "howItWorks": "Comment ça marche",
     "about": "À propos",
     "contact": "Contact",
-    "getDemo": "Obtenir une démo"
+    "getStarted": "Commencer",
+    "signUp": "S'inscrire"
   },
   "hero": {
     "title": "Surveillance Proactive de la Santé pour les Maladies Chroniques",
     "subtitle": "Des millions de personnes ne suivent pas leur santé régulièrement, ce qui entraîne des risques invisibles. Chronic AI, votre agent de santé autonome, détecte les tendances dangereuses tôt et alerte votre médecin avant que les complications ne surviennent.",
-    "requestDemo": "Demander une démo",
+    "getStarted": "Commencer",
     "learnMore": "En savoir plus",
     "card1Title": "Surveillance 24/7",
     "card1Desc": "Suivi de santé continu alimenté par l'IA.",
@@ -39,7 +40,7 @@
     "title": "Combler l'Écart Entre les Visites",
     "p1": "Les médecins ne voient souvent les patients que lors de visites périodiques, ce qui signifie que des tendances dangereuses comme une tension artérielle en hausse, des pics de glycémie ou des médicaments manqués peuvent passer inaperçues jusqu'à ce qu'il soit trop tard.",
     "p2": "Chronic AI comble cet écart. Notre agent IA agit comme une extension vigilante de l'équipe clinique, fournissant une boucle de rétroaction continue entre le patient et son médecin. Cela garantit que les soins sont proactifs, et non réactifs.",
-    "empowerButton": "Renforcez Votre Pratique"
+    "getStartedButton": "Commencer"
   },
   "howItWorks": {
     "title": "Un Chemin Plus Simple vers une Meilleure Santé",
@@ -68,10 +69,10 @@
   "cta": {
     "title": "Prenez le Contrôle de la Santé, de Manière Proactive.",
     "subtitle": "Prêt à voir comment la surveillance autonome peut transformer les soins aux patients ? Contactez-nous pour une démo personnalisée.",
-    "button": "Demander un Accès Anticipé"
+    "button": "Commencer"
   },
   "contact": {
-    "title": "Obtenir une Démo Personnalisée",
+    "title": "Demander une démo",
     "subtitle": "Remplissez le formulaire, et notre équipe vous contactera pour planifier une démo adaptée à vos besoins, que vous soyez un patient, un médecin ou un administrateur de clinique.",
     "formName": "Nom Complet",
     "formEmail": "Adresse E-mail",
@@ -81,7 +82,7 @@
     "roleAdmin": "Administrateur d'Hôpital",
     "roleOther": "Autre",
     "formMessage": "Message (Optionnel)",
-    "formSubmit": "Envoyer la Demande"
+    "formSubmit": "Demander une démo"
   },
   "footer": {
     "tagline": "Surveillance proactive de la santé pour combler l'écart entre les visites cliniques.",

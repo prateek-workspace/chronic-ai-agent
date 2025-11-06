@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 const About: React.FC = () => {
   const { t } = useTranslation();
@@ -23,9 +24,9 @@ const About: React.FC = () => {
             <p className="text-lg font-serif text-brand-text-light dark:text-gray-300 mb-8 leading-relaxed">
               {t('about.p2')}
             </p>
-            <a href="#contact" className="bg-brand-primary text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-opacity-90 transform hover:-translate-y-1 transition-all duration-300">
-              {t('about.empowerButton')}
-            </a>
+            <Link to="/signup" className="bg-brand-primary text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:bg-opacity-90 transform hover:-translate-y-1 transition-all duration-300">
+              {t('about.getStartedButton')}
+            </Link>
           </div>
         </div>
       </div>
