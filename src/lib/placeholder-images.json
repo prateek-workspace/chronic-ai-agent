@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "hero-doctor",
-      "description": "A doctor reviewing patient data on a tablet",
-      "imageUrl": "https://images.unsplash.com/photo-1642975967602-653d378f3b5b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxkb2N0b3IlMjBkYXRhfGVufDB8fHx8MTc2MjQwODUzM3ww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "doctor data"
+      "description": "An abstract visualization of medical data and technology",
+      "imageUrl": "https://images.unsplash.com/photo-1554475901-4538ddfbccc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtZWRpY2FsJTIwdGVjaG5vbG9neXxlbnwwfHx8fDE3NjI0MjA1NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "medical technology"
     },
     {
       "id": "avatar-1",
@@ -41,6 +41,18 @@
       "description": "Avatar for a male patient",
       "imageUrl": "https://images.unsplash.com/photo-1583692331507-fc0bd348695d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxtYW4lMjBmYWNlfGVufDB8fHx8MTc2MjM3Njc2M3ww&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "man face"
+    },
+    {
+      "id": "avatar-testimonial-1",
+      "description": "Avatar for a female doctor testimonial",
+      "imageUrl": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkb2N0b3IlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjI0MTAxNTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "doctor portrait"
+    },
+    {
+      "id": "avatar-testimonial-2",
+      "description": "Avatar for a male doctor testimonial",
+      "imageUrl": "https://images.unsplash.com/photo-1537368910025-700350fe46c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkb2N0b3IlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjI0MTAxNTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "doctor portrait"
     }
   ]
 }

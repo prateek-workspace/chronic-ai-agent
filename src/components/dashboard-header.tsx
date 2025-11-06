@@ -11,6 +11,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { SidebarTrigger } from '@/components/ui/sidebar';
 import { Search } from 'lucide-react';
 import { Input } from './ui/input';
+import { ThemeToggle } from './theme-toggle';
 
 type DashboardHeaderProps = {
   title: string;
@@ -34,6 +35,7 @@ export function DashboardHeader({ title }: DashboardHeaderProps) {
             />
           </div>
         </form>
+        <ThemeToggle />
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="relative h-9 w-9 rounded-full">
